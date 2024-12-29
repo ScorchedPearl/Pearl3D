@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/self/three.comp/cube.jsx", "src/components/self/three.comp/tailwindLogo.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/self/three.comp/cube.jsx", "src/components/self/three.comp/tailwindLogo.jsx", "src/components/self/movingthree.comp/horseMoving.jsx"],
   "exclude": ["node_modules"]
 }

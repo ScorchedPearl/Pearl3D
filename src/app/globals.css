@@ -100,7 +100,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-background  transition-all active:scale-95 text-primary font-extrabold mx-auto;
   }
 
   .btn-ping {
@@ -108,7 +108,7 @@ body {
   }
 
   .btn-ping_dot {
-    @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
+    @apply relative inline-flex rounded-full h-3 w-3 bg-green-300;
   }
 
   /* hero section */
