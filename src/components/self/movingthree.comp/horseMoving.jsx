@@ -17,7 +17,7 @@ const keys={
 }
 let lastKey = '';
 
-const camera=useThree().camera;
+// const camera=useThree().camera;
   //  useEffect(() => {
   //   const duration = 3000; 
   //   const start = performance.now();
