@@ -2,7 +2,8 @@
 const nextConfig = {
  images:{
   domains:['www.w3.org']
- }
+ },
+ output: 'export'
 };
 
 export default nextConfig;
