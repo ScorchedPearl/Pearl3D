@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import { useGLTF, 
 useAnimations } from '@react-three/drei'
-// import { useThree } from '@react-three/fiber'
+import { useThree } from '@react-three/fiber'
 import { useEffect } from 'react'
 export default function Model(props) {
   const group = useRef()
