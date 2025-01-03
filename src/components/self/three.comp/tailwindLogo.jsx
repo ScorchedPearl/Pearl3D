@@ -1,7 +1,4 @@
-
-import React, { useRef } from 'react'
 import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
-import { color } from 'three/tsl'
 
 export function Tailwind(props) {
   const { nodes, materials } = useGLTF('models/1.glb')

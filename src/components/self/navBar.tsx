@@ -4,9 +4,6 @@ import { Button } from "../ui/button";
 import { IconMenu,IconX } from '@tabler/icons-react';
 import { useState } from "react";
 import { navLinks } from "@/constants";
-function VIcon() {
- return <span style={{ fontSize: '24px', fontWeight: 'bold' }}>V</span>;
-}
 const NavItems=()=>{
   return(
    <div>

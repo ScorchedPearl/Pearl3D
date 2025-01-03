@@ -4,7 +4,6 @@ import { Points, PointMaterial } from '@react-three/drei';
 
 export default function DustParticles({ count = 5000 }) {
  const ref = useRef();
-
  const particles = useMemo(() => {
    const positions = new Float32Array(count * 3);
    for (let i = 0; i < count; i++) {

@@ -62,7 +62,7 @@ export default function Street() {
   <>
     {[...Array(24)].map((_, i) => (
     i % 5 === 4 ? (
-    <Bench key={i} position={[lanternPosition.x, lanternPosition.y, lanternPosition.z - i * 10]} scale={0.03} />
+    <Bench key={i} position={[lanternPosition.x-5, lanternPosition.y, lanternPosition.z - i * 10]} scale={0.03} />
     ) : (
     <Lantern key={i} position={[lanternPosition.x, lanternPosition.y, lanternPosition.z - i * 10]} scale={0.8} />
     )

@@ -1,7 +1,8 @@
 import { useGLTF } from '@react-three/drei'
+import { GroupProps } from '@react-three/fiber'
 import * as THREE from 'three'
 
-export default function Ldn(props:any) {
+export default function Ldn(props:GroupProps) {
  const { nodes } = useGLTF('models/linkdin.glb')
  const blackMaterial = new THREE.MeshStandardMaterial({ color: 'black' })
  const whiteMaterial = new THREE.MeshStandardMaterial({ color: 'white' })

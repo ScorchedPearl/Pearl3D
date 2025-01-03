@@ -11,7 +11,7 @@ export default function IntroScreen(props) {
   const { actions } = useAnimations(animations, group)
   useEffect(() => {
     actions['Take 001'].play()
-  },[]);
+  },[actions]);
 
 
 const texture = useLoader(TextureLoader, 'textures/screentexture.png')

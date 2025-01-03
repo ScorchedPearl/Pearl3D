@@ -1,53 +1,54 @@
 "use client"
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas} from "@react-three/fiber";
 import Model from "./movingthree.comp/horseMoving";
-import { OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
-import { Leva, useControls } from "leva";
 import { useEffect} from "react";
 import Sky from "./skycomp/sky"
 import IntroScreen from "./introduction/screen"
 import House from "./movingthree.comp/house"
 import Street from "./movingthree.comp/streets"
+import FloatingCastle from "./Projexts/floatingCastle";
+import MovementSuggestions from "../modif/movementSuggesstion";
 export default function movingSection(){
- const controls=useControls('HackerRoom',{
-  positionX:{
-    value:15.,
-    min:-200,
-    max:200
-  },
-  positionY:{
-    value:5,
-    min:-200,
-    max:200
-  },
-  positionZ:{
-    value:10,
-    min:-200,
-    max:200
-  },
-  scale:{
-    value:25,
-    min:0.01,
-    max:500
-  },
-  rotationX:{
-    value:0,
-    min:-20,
-    max:10
-  },
-  rotationY:{
-    value:0,
-    min:-20,
-    max:10
-  },
-  rotationZ:{
-    value:0,
-    min:-20,
-    max:10
-  }
- })
+//  const controls=useControls('HackerRoom',{
+//   positionX:{
+//     value:15.,
+//     min:-200,
+//     max:200
+//   },
+//   positionY:{
+//     value:5,
+//     min:-200,
+//     max:200
+//   },
+//   positionZ:{
+//     value:10,
+//     min:-200,
+//     max:200
+//   },
+//   scale:{
+//     value:25,
+//     min:0.01,
+//     max:500
+//   },
+//   rotationX:{
+//     value:0,
+//     min:-20,
+//     max:10
+//   },
+//   rotationY:{
+//     value:0,
+//     min:-20,
+//     max:10
+//   },
+//   rotationZ:{
+//     value:0,
+//     min:-20,
+//     max:10
+//   }
+//  })
  const texture = useLoader(THREE.TextureLoader, 'textures/texturefloo2.png');
  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
  texture.repeat.set(1000, 1000);
@@ -102,7 +103,7 @@ export default function movingSection(){
     }
    };
   }, [texture]);
- let meshPosition={
+ const meshPosition={
   x:0,
   y:-1,
   z:0,
@@ -140,7 +141,8 @@ export default function movingSection(){
   <audio autoPlay loop>
       <source src="audio/uareawizardharry.mp3" type="audio/mpeg" />
   </audio>
-   
+    
+     
    <Canvas
     className="h-full w-full"
     shadows
@@ -156,6 +158,9 @@ export default function movingSection(){
      <meshStandardMaterial map={texture} />
      
     </mesh>
+    <Html>
+    <MovementSuggestions></MovementSuggestions>
+    </Html> 
       <Street></Street>
      <IntroScreen position={[cameraMovement2.x, cameraMovement2.y, cameraMovement2.z-100]} scale={250}></IntroScreen>
       <House position={[cameraMovement2.x-150, 0, cameraMovement2.z-150]} scale={10}></House>
@@ -165,7 +170,7 @@ export default function movingSection(){
       >
       </Model>
      <ambientLight intensity={0.2} />
-
+      <FloatingCastle position={[150,60,-100]}scale={8}></FloatingCastle>
      <spotLight
       position={[5, 10, 5]}
       angle={0.3}
@@ -189,7 +194,7 @@ export default function movingSection(){
       shadow-camera-top={10}
       shadow-camera-bottom={-10}
      />
-
+      
      <OrbitControls />
     </Canvas>
    </div>

@@ -1,10 +1,9 @@
 "use client"
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera} from "@react-three/drei";
+import {  PerspectiveCamera} from "@react-three/drei";
 import HackerRoom from "./three.comp/heroComp";
 import CanvasLoader from "./three.comp/canvasLoader";
-import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import Target from "./three.comp/target";
 import ReactLogo from "./three.comp/reactLogo";
@@ -66,8 +65,8 @@ export default function Hero(){
    <>
    <section className=" min-h-screen w-full flex flex-col relative">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <h1 className="text-3xl sm:text-4xl font-bold text-primary text-center ">Vishwas's Portfolio</h1>
-        <p className="hero_tag text-muted-foreground">I'm a Full Stack Developer</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-primary text-center ">{`Vishwas's Portfolio`}</h1>
+        <p className="hero_tag text-muted-foreground">{`I'm a Full Stack Developer`}</p>
         <div className="w-full h-full absolute inset-0" ref={mountRef}>
          {/* <Leva></Leva> */}
            <Canvas className="w-full h-full">
@@ -102,7 +101,7 @@ export default function Hero(){
               
               <ambientLight intensity={1} />
               <directionalLight intensity={0.5} position={[10, 10, 10]} />
-              {/* <OrbitControls></OrbitControls> */}
+             {/* <OrbitControls></OrbitControls> */}
            </Canvas>
         </div>
         <div className="absolute bottom-7 left-0 right-0 w-full z-15 c-space">

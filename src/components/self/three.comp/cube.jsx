@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 
 const Cube = ({ ...props }) => {
   const { nodes } = useGLTF('models/cube.glb');
-  const {theme ,setTheme}=useTheme();
+  const {theme}=useTheme();
   const texture = useTexture('textures/cube.png');
 
 

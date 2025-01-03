@@ -1,5 +1,3 @@
-
-import React, { useRef } from 'react'
 import { useGLTF, PerspectiveCamera,Float } from '@react-three/drei'
 
 export default function MongoDB(props) {
