@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import {useLoader} from '@react-three/fiber'
 import * as THREE from 'three'
-import { useRouter } from 'next/router'
 export default function FloatingCastle(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('models/FloatingCastle/scene.gltf')

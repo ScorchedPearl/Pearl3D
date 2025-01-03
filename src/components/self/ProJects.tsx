@@ -2,7 +2,6 @@
 import { OrbitControls } from "@react-three/drei";
 import FloatingCastle from "./ProjectsPage/floatingCastle";
 import { Canvas } from "@react-three/fiber";
-
 export default function Projects(){
     return (
      <Canvas className="w-full h-full"
