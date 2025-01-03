@@ -17,43 +17,43 @@ const keys={
 }
 let lastKey = '';
 
-// const camera=useThree().camera;
-  //  useEffect(() => {
-  //   const duration = 3000; 
-  //   const start = performance.now();
+const camera=useThree().camera;
+   useEffect(() => {
+    const duration = 3000; 
+    const start = performance.now();
 
-  //   const animate = (time) => {
-  //    const elapsed = time - start;
-  //    const t = Math.min(elapsed / duration, 1);
-  //    camera.position.x = props.cameraPlacement.x + (props.cameraMovement.x - props.cameraPlacement.x) * t;
-  //    camera.position.y = props.cameraPlacement.y + (props.cameraMovement.y - props.cameraPlacement.y) * t;
-  //    camera.position.z = props.cameraPlacement.z + (props.cameraMovement.z - props.cameraPlacement.z) * t;
-  //    camera.fov = props.cameraPlacement.fov + (props.cameraMovement.fov - props.cameraPlacement.fov) * t;
-  //    camera.updateProjectionMatrix();
+    const animate = (time) => {
+     const elapsed = time - start;
+     const t = Math.min(elapsed / duration, 1);
+     camera.position.x = props.cameraPlacement.x + (props.cameraMovement.x - props.cameraPlacement.x) * t;
+     camera.position.y = props.cameraPlacement.y + (props.cameraMovement.y - props.cameraPlacement.y) * t;
+     camera.position.z = props.cameraPlacement.z + (props.cameraMovement.z - props.cameraPlacement.z) * t;
+     camera.fov = props.cameraPlacement.fov + (props.cameraMovement.fov - props.cameraPlacement.fov) * t;
+     camera.updateProjectionMatrix();
 
-  //    requestAnimationFrame(animate);
-  //   };
-  //   setTimeout(() => {
-  //     const duration = 3000; 
-  //     const start = performance.now();
+     requestAnimationFrame(animate);
+    };
+    setTimeout(() => {
+      const duration = 3000; 
+      const start = performance.now();
 
-  //     const animate = (time) => {
-  //       const elapsed = time - start;
-  //       const t = Math.min(elapsed / duration, 1);
-  //       camera.position.x = props.cameraMovement.x + (props.cameraMovement2.x - props.cameraMovement.x) * t;
-  //       camera.position.y = props.cameraMovement.y + (props.cameraMovement2.y - props.cameraMovement.y) * t;
-  //       camera.position.z = props.cameraMovement.z + (props.cameraMovement2.z - props.cameraMovement.z) * t;
-  //       camera.fov = props.cameraMovement.fov + (props.cameraMovement2.fov - props.cameraMovement.fov) * t;
-  //       camera.updateProjectionMatrix();
+      const animate = (time) => {
+        const elapsed = time - start;
+        const t = Math.min(elapsed / duration, 1);
+        camera.position.x = props.cameraMovement.x + (props.cameraMovement2.x - props.cameraMovement.x) * t;
+        camera.position.y = props.cameraMovement.y + (props.cameraMovement2.y - props.cameraMovement.y) * t;
+        camera.position.z = props.cameraMovement.z + (props.cameraMovement2.z - props.cameraMovement.z) * t;
+        camera.fov = props.cameraMovement.fov + (props.cameraMovement2.fov - props.cameraMovement.fov) * t;
+        camera.updateProjectionMatrix();
 
-  //       requestAnimationFrame(animate);
-  //     };
+        requestAnimationFrame(animate);
+      };
 
-  //     requestAnimationFrame(animate);
-  //   },20000);
+      requestAnimationFrame(animate);
+    },20000);
 
-  //   requestAnimationFrame(animate);
-  //  }, [props.cameraPlacement, props.cameraMovement, camera]);
+    requestAnimationFrame(animate);
+   }, [props.cameraPlacement, props.cameraMovement, camera]);
 
 
   
