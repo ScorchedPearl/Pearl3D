@@ -1,6 +1,5 @@
 "use client"
 import { OrbitControls } from "@react-three/drei";
-import FloatingCastle from "./ProjectsPage/floatingCastle";
 import { Canvas } from "@react-three/fiber";
 import FloatingCastle2 from "./Projexts/floatingCastle";
 export default function Projects(){
