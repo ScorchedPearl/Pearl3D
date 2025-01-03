@@ -11,7 +11,7 @@ import House from "./movingthree.comp/house"
 import Street from "./movingthree.comp/streets"
 import FloatingCastle from "./Projexts/floatingCastle";
 import MovementSuggestions from "../modif/movementSuggesstion";
-export default function movingSection(){
+export default function MovingSection(){
 //  const controls=useControls('HackerRoom',{
 //   positionX:{
 //     value:15.,
@@ -49,6 +49,7 @@ export default function movingSection(){
 //     max:10
 //   }
 //  })
+
  const texture = useLoader(THREE.TextureLoader, 'textures/texturefloo2.png');
  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
  texture.repeat.set(1000, 1000);
