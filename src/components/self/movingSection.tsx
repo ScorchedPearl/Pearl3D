@@ -9,7 +9,7 @@ import Sky from "./skycomp/sky"
 import IntroScreen from "./introduction/screen"
 import House from "./movingthree.comp/house"
 import Street from "./movingthree.comp/streets"
-import FloatingCastle from "./Explore/floatingcastle";
+import FloatingCastle from "./Explore/floatingcastle.jsx";
 import MovementSuggestions from "../modif/movementSuggesstion";
 import Me from "./profileintro/me";
 export default function MovingSection(){

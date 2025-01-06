@@ -8,6 +8,11 @@ export default function FloatingCastle2(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('models/FloatingCastle/scene.gltf')
   const { actions } = useAnimations(animations, group)
+  useEffect(
+  ()=>{
+    actions["Scene"].play();
+  },[]
+  )
   const texture = useLoader(THREE.TextureLoader, 'textures/textures/final_A_emissive.jpeg');
   materials.final_A.map = texture;
  const texture1 = useLoader(THREE.TextureLoader, 'textures/textures/final_alfa_emissive.jpeg');
