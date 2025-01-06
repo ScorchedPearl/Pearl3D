@@ -1,7 +1,7 @@
 "use client"
 import { Canvas} from "@react-three/fiber";
 import Model from "./movingthree.comp/horseMoving";
-import { Html, OrbitControls } from "@react-three/drei";
+import {  Html, OrbitControls } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect} from "react";
@@ -9,8 +9,9 @@ import Sky from "./skycomp/sky"
 import IntroScreen from "./introduction/screen"
 import House from "./movingthree.comp/house"
 import Street from "./movingthree.comp/streets"
-import FloatingCastle from "./Projexts/floatingCastle";
+import FloatingCastle from "./Explore/floatingCastle";
 import MovementSuggestions from "../modif/movementSuggesstion";
+import Me from "./profileintro/me";
 export default function MovingSection(){
 //  const controls=useControls('HackerRoom',{
 //   positionX:{
@@ -135,7 +136,12 @@ export default function MovingSection(){
     z: 0,
     fov: 100
   }
-
+  function handleOnClick(){
+      window.location.href = "/profile";
+  }
+  function handleOnClick2(){
+    window.location.href = "/projects";
+  }
   return (
   <>
    <div className="w-full h-full absolute inset-0">
@@ -169,9 +175,11 @@ export default function MovingSection(){
      cameraMovement={cameraMovement}cameraMovement2={cameraMovement3}position={[0,-0.9,0]} scale={1} 
       rotation={[0, -Math.PI, 0]}
       >
-      </Model>
+      </Model >
+      <Me position={[-50,10,-100]} scale={5} onClick={handleOnClick}></Me>
+
      <ambientLight intensity={0.2} />
-      <FloatingCastle position={[150,60,-100]}scale={8}></FloatingCastle>
+      <FloatingCastle onClick={handleOnClick2} position={[150,60,-100]}scale={8}></FloatingCastle>
      <spotLight
       position={[5, 10, 5]}
       angle={0.3}

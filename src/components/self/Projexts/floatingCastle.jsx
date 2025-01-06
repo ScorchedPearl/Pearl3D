@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import {useLoader} from '@react-three/fiber'
+import { useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 export default function FloatingCastle2(props) {
   const group = useRef()
@@ -27,17 +28,81 @@ export default function FloatingCastle2(props) {
  materials.final_SOMT.map = texture8
  const texture9 = useLoader(THREE.TextureLoader, 'textures/textures/sky_sketchfab_baseColor.jpeg')
  materials.sky_sketchfab.map = texture9
-
-
+const cameraPosition = {
+  pos1: {
+    x: 30,
+    y: 0,
+    z: 0,
+    fov: 50,
+  },
+  pos2: {
+    x: 10,
+    y: 0,
+    z: -3,
+    fov: 75,
+  },
+  pos3: {
+    x: 15,
+    y: 23,
+    z: 0,
+    fov: 60,
+  }
+};
+const camera = useThree().camera;
 useEffect(() => {
-   actions["Scene"].play();
-}, [actions]);
-function onClickHandler(){
- console.log("hlo");
- window.location.href = '/projects';
-}
+  const positions = Object.values(cameraPosition);
+  let index = 0;
+
+  const animateCamera = (start, end, duration) => {
+    const startTime = performance.now();
+
+    const animate = (time) => {
+      const elapsed = time - startTime;
+      const t = Math.min(elapsed / duration, 1);
+
+      camera.position.lerpVectors(start, end, t);
+      camera.fov = THREE.MathUtils.lerp(start.fov, end.fov, t);
+      camera.updateProjectionMatrix();
+
+      if (t < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        index = (index + 1) % positions.length;
+        const newStart = new THREE.Vector3(camera.position.x, camera.position.y, camera.position.z);
+        newStart.fov = camera.fov;
+        const newEnd = new THREE.Vector3(positions[index].x, positions[index].y, positions[index].z);
+        newEnd.fov = positions[index].fov;
+        animateCamera(newStart, newEnd, duration);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = scrollTop / maxScrollTop;
+    const targetIndex = Math.floor(scrollFraction * positions.length);
+
+    if (targetIndex !== index) {
+      const start = new THREE.Vector3(camera.position.x, camera.position.y, camera.position.z);
+      start.fov = camera.fov;
+      const end = new THREE.Vector3(positions[targetIndex].x, positions[targetIndex].y, positions[targetIndex].z);
+      end.fov = positions[targetIndex].fov;
+
+      animateCamera(start, end, 2000);
+      index = targetIndex;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [props.camera]);
+
   return (
-   <group onClick={()=>{onClickHandler()}} ref={group} {...props} dispose={null}>
+   <group ref={group} {...props} dispose={null}>
      <group name="Sketchfab_Scene">
     <group name="Sketchfab_model" rotation={[Math.PI / 2, 0, Math.PI]} scale={0.002}>
       <group name="ed9a8042c54c452db47145e9a7551210fbx" rotation={[-Math.PI, 0, 0]}>

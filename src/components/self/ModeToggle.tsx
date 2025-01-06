@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 export default function ModeToggleButton() {
     const { theme, setTheme } = useTheme();
     return (
-        <Button onClick={() => theme === "light" ? setTheme("dark") : setTheme("light")} >
+        <Button onClick={() => theme === "light" ? setTheme("dark") : setTheme("light")} className="ml-10">
             ModeToggle
         </Button>
     );
