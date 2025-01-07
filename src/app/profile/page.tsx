@@ -6,9 +6,9 @@ import Navbar from "./components/main/Navbar";
 import StarsCanvas from "./components/main/StarBackground";
 import Footer from "./components/main/Footer";
 const Page = async () => {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 12000);
-  });
+  // await new Promise((resolve) => {
+  //   setTimeout(resolve, 12000);
+  // });
   return (
     <main className="h-full w-full">
       <StarsCanvas></StarsCanvas>

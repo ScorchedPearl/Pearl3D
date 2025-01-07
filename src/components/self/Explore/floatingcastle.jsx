@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations, Float } from '@react-three/drei'
+import { useGLTF, useAnimations } from '@react-three/drei'
 import {useLoader} from '@react-three/fiber'
 import * as THREE from 'three'
 export default function FloatingCastle(props) {
@@ -34,7 +34,6 @@ useEffect(() => {
 }, [actions]);
 
   return (
-    <Float>
    <group  ref={group} {...props} dispose={null}>
      <group name="Sketchfab_Scene">
     <group name="Sketchfab_model" rotation={[Math.PI / 2, 0, Math.PI]} scale={0.002}>
@@ -132,7 +131,6 @@ useEffect(() => {
     </group>
      </group>
    </group>
-   </Float>
     )
 }
 

@@ -11,7 +11,7 @@ interface Props {
 }
 export default function EduCard({ src, title, description, grade }: Props) {
   return (
-    <CardContainer className="inter-var z-20">
+    <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2]border border-[#2A0E61] w-auto sm:w-[24rem] h-auto rounded-xl p-6 border  ">
         <CardItem
           translateZ="50"

@@ -2,7 +2,11 @@
 import { useState,useEffect } from 'react';
 import Lantern from '../streetcomp/lantern';
 import Bench from '../streetcomp/bench';
-
+import PhoneBooth from "../streetcomp/phonebooth"
+import Food from "../streetcomp/food"
+import Bin from "../streetcomp/bin"
+import Barrier from "../streetcomp/barrier"
+import Abhouse from "../streetcomp/houseab"
 export default function Street() {
  const [lanternPosition, setLanternPosition] = useState({
  x: -5,
@@ -67,6 +71,19 @@ export default function Street() {
     <Lantern key={i} position={[lanternPosition.x, lanternPosition.y, lanternPosition.z - i * 10]} scale={0.8} />
     )
     ))}
+    <PhoneBooth position={[lanternPosition.x+10,lanternPosition.y,lanternPosition.z-20]} scale={2}></PhoneBooth>
+    <PhoneBooth position={[lanternPosition.x+10,lanternPosition.y,lanternPosition.z-50]} scale={2}></PhoneBooth>
+    <PhoneBooth position={[lanternPosition.x+10,lanternPosition.y,lanternPosition.z-90]} scale={2}></PhoneBooth>
+    <Food position={[lanternPosition.x+8,lanternPosition.y,lanternPosition.z-65]} scale={0.01} ></Food>
+    <Bin position={[lanternPosition.x+8,lanternPosition.y+1,lanternPosition.z-10]}  scale={1.3}></Bin>
+    <Bin position={[lanternPosition.x+1,lanternPosition.y+1,lanternPosition.z-28]}  scale={1.3}></Bin>
+    <Bin position={[lanternPosition.x+1,lanternPosition.y+1,lanternPosition.z-46]}  scale={1.3}></Bin>
+    <Bin position={[lanternPosition.x+8,lanternPosition.y+1,lanternPosition.z-74]}  scale={1.3}></Bin>
+    <Barrier position={[lanternPosition.x+13,lanternPosition.y,lanternPosition.z-18]}  scale={0.02}></Barrier>
+    <Barrier position={[lanternPosition.x+13,lanternPosition.y,lanternPosition.z-58]}  scale={0.02}></Barrier>
+    <Abhouse position={[lanternPosition.x+13,lanternPosition.y,lanternPosition.z-80]} rotation={[0,Math.PI,0]} ></Abhouse>
+    <Abhouse position={[lanternPosition.x-10,lanternPosition.y,lanternPosition.z-10]}  ></Abhouse>
+    <Abhouse position={[lanternPosition.x-10,lanternPosition.y,lanternPosition.z-50]}  ></Abhouse>
   </>
   );
 }
