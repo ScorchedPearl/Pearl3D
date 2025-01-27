@@ -1,14 +1,26 @@
-import Hero from "@/components/self/heroSection";
-import NavBar from "@/components/self/navBar";
+// "use client";
+import Hero from "./components/main/Hero";
+import Skills from "./components/main/Skills";
+import Projects from "./components/main/Education";
+import Navbar from "./components/main/Navbar";
+import StarsCanvas from "./components/main/StarBackground";
+import Footer from "./components/main/Footer";
+import Cp from "./components/main/cp";
+const Page = async () => {
 
-export default async function Home() {
-  await new Promise((resolve) => {
-    setTimeout(resolve,5000);
-  });
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <NavBar></NavBar>
-      <Hero></Hero>
-    </div>
+    <main className="h-full w-full">
+      <StarsCanvas></StarsCanvas>
+      <Navbar></Navbar>
+      <div className="flex flex-col gap-20">
+        <Hero />
+        <Skills />
+        <Projects />
+        <Cp />
+      </div>
+      <Footer></Footer>
+    </main>
   );
-}
+};
+
+export default Page;
